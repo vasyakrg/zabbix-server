@@ -20,6 +20,9 @@ sudo zcat /usr/share/doc/zabbix-server-mysql/create.sql.gz | sudo mysql -uzabbix
 git clone https://github.com/vasyakrg/zabbix-alert-scripts.git /usr/lib/zabbix/alertscripts
 sudo chown -R zabbix:root /usr/lib/zabbix/alertscripts
 
+sudo cp ~/zabbix_server.conf /etc/zabbix
+sudo cp ~/apache.conf /etc/zabbix
+
 sudo service apache2 restart
 sudo service zabbix-server start
 sudo update-rc.d zabbix-server enable
