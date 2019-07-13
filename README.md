@@ -21,9 +21,9 @@
   2. смените на сервере тайм-зону (если вы не земляк с Новосибирска) (в файле scripts/zabconf/apache2.conf - если перед установкой)
 
 ### Видео-урок
-  * Запись по работе с проектом можно посмотреть [тут](https://youtu.be/)
-  * Этот и много других уроков [тут](vk.com/realmanual)
+  * Запись по работе с проектом можно посмотреть [тут](https://youtu.be/cq_w5aj-haY)
+  * Этот и много других уроков [тут](https://vk.com/realmanual)
 
 ##### Автор
  - **Vassiliy Yegorov** - *Initial work* - [vasyakrg](https://github.com/vasyakrg)
- - [сайт](vk.com/realmanual)
+ - [сайт](https://vk.com/realmanual)
