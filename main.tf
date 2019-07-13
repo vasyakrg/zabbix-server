@@ -51,21 +51,18 @@ resource "google_compute_instance" "zabbix" {
     private_key = "${file("~/.ssh/id_rsa")}"
   }
 
-  # provisioner "file" {
-  #   source      = "scripts/setupzabbix.sh"
-  #   destination = "~/setupzabbix.sh"
-  # }
-
-  metadata_startup_script = "${file("scripts/setupzabbix.sh")}"
-
   provisioner "file" {
-    source      = "scripts/zabscripts"
-    destination = "/usr/lib/zabbix/alertscripts "
+    source      = "scripts/setupzabbix.sh"
+    destination = "~/setupzabbix.sh"
   }
+
+  # provisioner "remote-exec" {
+  #   inline = ["${file("scripts/setupzabbix.sh")}"]
+  # }
 
   provisioner "file" {
     source      = "scripts/zabconf"
-    destination = "/etc/zabbix"
+    destination = "~/"
   }
 
 }
