@@ -6,7 +6,9 @@ sudo apt update
 
 sudo apt install zabbix-server-mysql -y
 sudo apt install zabbix-frontend-php -y
-sudo apt install git -y
+sudo apt install zabbix-agent -y
+sudo apt install git curl php-curl mc htop -y
+
 
 sudo mysql -uroot -e "create database zabbix character set utf8 collate utf8_bin;"
 sudo mysql -uroot -e "grant all privileges on zabbix.* to zabbix@localhost identified by 'V7F4Uj12dcn5WAu';"

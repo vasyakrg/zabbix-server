@@ -10,7 +10,7 @@ resource "google_compute_firewall" "firewall_vpn" {
   allow {
     protocol = "tcp"
     ports = [
-      "443", "80", "10050"
+      "443", "80", "10050", "10051"
     ]
   }
 
