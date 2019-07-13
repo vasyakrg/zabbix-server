@@ -7,20 +7,18 @@ resource "google_compute_instance" "zabbix" {
   zone         = "${var.zone_instance}"
   tags         = ["${var.zabbix_tag}"]
 
-  # add image disk
   boot_disk {
     initialize_params {
       image = var.disk_image
     }
   }
 
-  # add network
   network_interface {
     network = "default"
     access_config {
     }
   }
-  # ssh_key
+
   metadata = {
     sshKeys = "${var.default_user}:${file("~/.ssh/id_rsa.pub")}"
   }
@@ -36,13 +34,12 @@ resource "google_compute_instance" "zabbix" {
     destination = "~/setupzabbix.sh"
   }
 
-  # provisioner "remote-exec" {
-  #   inline = ["${file("scripts/setupzabbix.sh")}"]
-  # }
-
   provisioner "file" {
     source      = "scripts/zabconf"
     destination = "~/"
   }
 
+  # provisioner "remote-exec" {
+  #   inline = ["${file("scripts/setupzabbix.sh")}"]
+  # }
 }

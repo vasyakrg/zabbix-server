@@ -17,11 +17,11 @@ sudo mysql -uroot -e "quit"
 
 sudo zcat /usr/share/doc/zabbix-server-mysql/create.sql.gz | sudo mysql -uzabbix zabbix -pV7F4Uj12dcn5WAu
 
-git clone https://github.com/vasyakrg/zabbix-alert-scripts.git /usr/lib/zabbix/alertscripts
+sudo git clone https://github.com/vasyakrg/zabbix-alert-scripts.git /usr/lib/zabbix/alertscripts
 sudo chown -R zabbix:root /usr/lib/zabbix/alertscripts
 
-sudo cp ~/zabbix_server.conf /etc/zabbix
-sudo cp ~/apache.conf /etc/zabbix
+sudo cp ~/zabconf/zabbix_server.conf /etc/zabbix
+sudo cp ~/zabconf/apache.conf /etc/zabbix
 
 sudo service apache2 restart
 sudo service zabbix-server start
